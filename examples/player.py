@@ -2,12 +2,19 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from pprint import pprint
 from time import sleep
+from dotenv import load_dotenv
+import os
+
+
+load_dotenv(".env")
+client_id = os.getenv("client_id")
+client_secret = os.getenv("client_secret")
+redirect_uri = os.getenv("redirect_uri")
+
+sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id, client_secret, redirect_uri,
+                                               scope="user-library-read user-read-playback-state user-read-recently-played"))
 
 scope = "user-read-playback-state,user-modify-playback-state"
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id="b7bf94e8355a41499f343af52b879860",
-                                               client_secret="2520477e8835405888556dc271691fad",
-                                               redirect_uri="http://kadinenterprises.com/",
-                                               scope="user-library-read user-read-playback-state user-read-recently-played"))
 
 # Shows playing devices
 res = sp.devices()
