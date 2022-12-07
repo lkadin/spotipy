@@ -27,6 +27,14 @@ import os
 from flask import Flask, session, request, redirect
 from flask_session import Session
 import spotipy
+from dotenv import load_dotenv
+import os
+
+load_dotenv(".env")
+SPOTIPY_CLIENT_ID = os.getenv("SPOTIPY_CLIENT_ID")
+SPOTIPY_CLIENT_SECRET = os.getenv("client_secret")
+SPOTIPY_REDIRECT_URI = os.getenv("redirect_uri")
+PORT=80
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.urandom(64)
@@ -41,7 +49,7 @@ def index():
     cache_handler = spotipy.cache_handler.FlaskSessionCacheHandler(session)
     auth_manager = spotipy.oauth2.SpotifyOAuth(scope='user-read-currently-playing playlist-modify-private',
                                                cache_handler=cache_handler,
-                                               show_dialog=True)
+                                               show_dialog=True,client_id=SPOTIPY_CLIENT_ID,client_secret=SPOTIPY_CLIENT_SECRET,redirect_uri=SPOTIPY_REDIRECT_URI)
 
     if request.args.get("code"):
         # Step 2. Being redirected from Spotify auth page
@@ -109,5 +117,4 @@ Following lines allow application to be run more conveniently with
 (Also includes directive to leverage pythons threading capacity.)
 '''
 if __name__ == '__main__':
-    app.run(threaded=True, port=int(os.environ.get("PORT",
-                                                   os.environ.get("SPOTIPY_REDIRECT_URI", 8080).split(":")[-1])))
+    app.run(threaded=True, port=PORT)

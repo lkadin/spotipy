@@ -4,7 +4,10 @@ from pprint import pprint
 from time import sleep
 
 scope = "user-read-playback-state,user-modify-playback-state"
-sp = spotipy.Spotify(client_credentials_manager=SpotifyOAuth(scope=scope))
+sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id="b7bf94e8355a41499f343af52b879860",
+                                               client_secret="2520477e8835405888556dc271691fad",
+                                               redirect_uri="http://kadinenterprises.com/",
+                                               scope="user-library-read user-read-playback-state user-read-recently-played"))
 
 # Shows playing devices
 res = sp.devices()
