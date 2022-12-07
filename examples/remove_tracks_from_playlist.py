@@ -4,6 +4,9 @@ import sys
 
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
+from dotenv import load_dotenv
+
+load_dotenv(".env")
 
 
 if len(sys.argv) > 2:

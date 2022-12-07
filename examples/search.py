@@ -4,6 +4,9 @@ from spotipy.oauth2 import SpotifyClientCredentials
 import spotipy
 import sys
 import pprint
+from dotenv import load_dotenv
+
+load_dotenv(".env")
 
 if len(sys.argv) > 1:
     search_str = sys.argv[1]

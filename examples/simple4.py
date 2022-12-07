@@ -1,5 +1,8 @@
 import spotipy
 from pprint import pprint
+from dotenv import load_dotenv
+
+load_dotenv(".env")
 
 
 def main():

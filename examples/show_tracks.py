@@ -6,6 +6,9 @@
 from spotipy.oauth2 import SpotifyClientCredentials
 import sys
 import spotipy
+from dotenv import load_dotenv
+
+load_dotenv(".env")
 
 if __name__ == "__main__":
     max_tracks_per_call = 50

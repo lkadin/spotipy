@@ -31,9 +31,6 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv(".env")
-SPOTIPY_CLIENT_ID = os.getenv("SPOTIPY_CLIENT_ID")
-SPOTIPY_CLIENT_SECRET = os.getenv("client_secret")
-SPOTIPY_REDIRECT_URI = os.getenv("redirect_uri")
 PORT = 80
 
 app = Flask(__name__)
@@ -51,9 +48,6 @@ def index():
         scope="user-read-currently-playing playlist-modify-private",
         cache_handler=cache_handler,
         show_dialog=True,
-        client_id=SPOTIPY_CLIENT_ID,
-        client_secret=SPOTIPY_CLIENT_SECRET,
-        redirect_uri=SPOTIPY_REDIRECT_URI,
     )
 
     if request.args.get("code"):

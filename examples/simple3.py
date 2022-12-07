@@ -1,5 +1,8 @@
 # Shows the name of the artist/band and their image by giving a link
 import sys
+from dotenv import load_dotenv
+
+load_dotenv(".env")
 
 from spotipy.oauth2 import SpotifyClientCredentials
 import spotipy

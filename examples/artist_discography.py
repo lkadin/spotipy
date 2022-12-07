@@ -4,6 +4,9 @@ import logging
 
 from spotipy.oauth2 import SpotifyClientCredentials
 import spotipy
+from dotenv import load_dotenv
+
+load_dotenv(".env")
 
 logger = logging.getLogger("examples.artist_discography")
 logging.basicConfig(level="INFO")

@@ -1,6 +1,9 @@
 from spotipy.oauth2 import SpotifyClientCredentials
 import spotipy
 import random
+from dotenv import load_dotenv
+
+load_dotenv(".env")
 
 """
     generates a list of songs where the first word in each subsequent song

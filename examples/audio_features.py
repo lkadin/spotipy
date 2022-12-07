@@ -6,7 +6,9 @@ import json
 import spotipy
 import time
 import sys
+from dotenv import load_dotenv
 
+load_dotenv(".env")
 
 client_credentials_manager = SpotifyClientCredentials()
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)

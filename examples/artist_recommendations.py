@@ -3,6 +3,9 @@ import logging
 
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
+from dotenv import load_dotenv
+
+load_dotenv(".env")
 
 
 logger = logging.getLogger("examples.artist_recommendations")

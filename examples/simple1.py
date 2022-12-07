@@ -1,5 +1,8 @@
 from spotipy.oauth2 import SpotifyClientCredentials
 import spotipy
+from dotenv import load_dotenv
+
+load_dotenv(".env")
 
 birdy_uri = "spotify:artist:2WX2uTcsvV5OnS0inACecP"
 

@@ -1,6 +1,9 @@
 # Shows the top artists for a user
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
+from dotenv import load_dotenv
+
+load_dotenv(".env")
 
 scope = "user-top-read"
 ranges = ["short_term", "medium_term", "long_term"]
