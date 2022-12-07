@@ -6,7 +6,7 @@ import sys
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
-scope = 'user-library-modify'
+scope = "user-library-modify"
 
 if len(sys.argv) > 1:
     tid = sys.argv[1]

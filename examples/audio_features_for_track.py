@@ -1,8 +1,6 @@
-
-
 # shows acoustic features for tracks for the given artist
 
-from __future__ import print_function    # (at top of module)
+from __future__ import print_function  # (at top of module)
 from spotipy.oauth2 import SpotifyClientCredentials
 import json
 import spotipy

@@ -11,8 +11,14 @@ client_id = os.getenv("client_id")
 client_secret = os.getenv("client_secret")
 redirect_uri = os.getenv("redirect_uri")
 
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id, client_secret, redirect_uri,
-                                               scope="user-library-read user-read-playback-state user-read-recently-played"))
+sp = spotipy.Spotify(
+    auth_manager=SpotifyOAuth(
+        client_id,
+        client_secret,
+        redirect_uri,
+        scope="user-library-read user-read-playback-state user-read-recently-played user-modify-playback-state",
+    )
+)
 
 scope = "user-read-playback-state,user-modify-playback-state"
 
@@ -21,7 +27,7 @@ res = sp.devices()
 pprint(res)
 
 # Change track
-sp.start_playback(uris=['spotify:track:6gdLoMygLsgktydTQ71b15'])
+sp.start_playback(uris=["spotify:track:6gdLoMygLsgktydTQ71b15"])
 
 # Change volume
 sp.volume(100)

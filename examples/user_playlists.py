@@ -15,5 +15,5 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth())
 
 playlists = sp.user_playlists(username)
 
-for playlist in playlists['items']:
-    print(playlist['name'])
+for playlist in playlists["items"]:
+    print(playlist["name"])

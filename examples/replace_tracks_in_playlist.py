@@ -13,7 +13,7 @@ else:
     print("Usage: %s playlist_id track_id ..." % (sys.argv[0],))
     sys.exit()
 
-scope = 'playlist-modify-public'
+scope = "playlist-modify-public"
 
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
 

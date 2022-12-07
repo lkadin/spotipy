@@ -6,7 +6,7 @@ import sys
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
-scope = 'user-library-read'
+scope = "user-library-read"
 
 if len(sys.argv) > 1:
     tid = sys.argv[1]

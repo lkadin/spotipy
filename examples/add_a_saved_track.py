@@ -4,17 +4,19 @@ import logging
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
-scope = 'user-library-modify'
+scope = "user-library-modify"
 
-logger = logging.getLogger('examples.add_a_saved_track')
-logging.basicConfig(level='DEBUG')
+logger = logging.getLogger("examples.add_a_saved_track")
+logging.basicConfig(level="DEBUG")
 
 
 def get_args():
-    parser = argparse.ArgumentParser(description='Add tracks to Your '
-                                     'Collection of saved tracks')
-    parser.add_argument('-t', '--tids', action='append',
-                        required=True, help='Track ids')
+    parser = argparse.ArgumentParser(
+        description="Add tracks to Your " "Collection of saved tracks"
+    )
+    parser.add_argument(
+        "-t", "--tids", action="append", required=True, help="Track ids"
+    )
     return parser.parse_args()
 
 
@@ -25,5 +27,5 @@ def main():
     sp.current_user_saved_tracks_add(tracks=args.tids)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

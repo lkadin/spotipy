@@ -8,11 +8,11 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth())
 response = sp.new_releases()
 
 while response:
-    albums = response['albums']
-    for i, item in enumerate(albums['items']):
-        print(albums['offset'] + i, item['name'])
+    albums = response["albums"]
+    for i, item in enumerate(albums["items"]):
+        print(albums["offset"] + i, item["name"])
 
-    if albums['next']:
+    if albums["next"]:
         response = sp.next(albums)
     else:
         response = None
